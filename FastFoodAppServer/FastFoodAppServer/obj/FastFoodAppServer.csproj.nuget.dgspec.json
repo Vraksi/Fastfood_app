@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vraksi\\source\\repos\\FastFoodAppServer\\FastFoodAppServer\\FastFoodAppServer.csproj": {}
+    "C:\\Users\\Vraksi\\source\\repos\\Fastfood app\\FastFoodAppServer\\FastFoodAppServer\\FastFoodAppServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vraksi\\source\\repos\\FastFoodAppServer\\FastFoodAppServer\\FastFoodAppServer.csproj": {
+    "C:\\Users\\Vraksi\\source\\repos\\Fastfood app\\FastFoodAppServer\\FastFoodAppServer\\FastFoodAppServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vraksi\\source\\repos\\FastFoodAppServer\\FastFoodAppServer\\FastFoodAppServer.csproj",
+        "projectUniqueName": "C:\\Users\\Vraksi\\source\\repos\\Fastfood app\\FastFoodAppServer\\FastFoodAppServer\\FastFoodAppServer.csproj",
         "projectName": "FastFoodAppServer",
-        "projectPath": "C:\\Users\\Vraksi\\source\\repos\\FastFoodAppServer\\FastFoodAppServer\\FastFoodAppServer.csproj",
+        "projectPath": "C:\\Users\\Vraksi\\source\\repos\\Fastfood app\\FastFoodAppServer\\FastFoodAppServer\\FastFoodAppServer.csproj",
         "packagesPath": "C:\\Users\\Vraksi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vraksi\\source\\repos\\FastFoodAppServer\\FastFoodAppServer\\obj\\",
+        "outputPath": "C:\\Users\\Vraksi\\source\\repos\\Fastfood app\\FastFoodAppServer\\FastFoodAppServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
