@@ -7,6 +7,10 @@
   <ItemGroup>
     <Compile Remove="Migrations\20210929105318_test.cs" />
     <Compile Remove="Migrations\20210929105318_test.Designer.cs" />
+    <Compile Remove="Migrations\20211001093831_Database_table_update.cs" />
+    <Compile Remove="Migrations\20211001093831_Database_table_update.Designer.cs" />
+    <Compile Remove="Migrations\20211001093951_Database_table_update.cs" />
+    <Compile Remove="Migrations\20211001093951_Database_table_update.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

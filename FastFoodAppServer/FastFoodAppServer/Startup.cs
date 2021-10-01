@@ -1,6 +1,8 @@
+using FastFoodAppServer.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,6 +27,10 @@ namespace FastFoodAppServer
         {
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+
+            var connection = Configuration.GetConnectionString("FastFoodAppServerContextConnection");
+            services.AddDbContext<FastFoodAppServerContext>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

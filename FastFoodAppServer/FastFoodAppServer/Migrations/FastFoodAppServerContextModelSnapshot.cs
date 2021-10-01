@@ -217,22 +217,156 @@ namespace FastFoodAppServer.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("FastFoodAppServer.Models.TestTable", b =>
+            modelBuilder.Entity("FastFoodAppServer.Models.Non_Generated.Accessory", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("myName")
+                    b.Property<string>("Category")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("myValue")
+                    b.Property<string>("OrderlinesId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PriceOfItem")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Accessory");
+                });
+
+            modelBuilder.Entity("FastFoodAppServer.Models.Non_Generated.Customer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("LoginId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LoginProvider")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TelephoneNumber")
+                        .HasColumnType("int");
+
+                    b.Property<string>("loginProviderKey")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(128)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LoginProvider", "loginProviderKey");
+
+                    b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("FastFoodAppServer.Models.Non_Generated.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("StatusId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StatusId");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("FastFoodAppServer.Models.Non_Generated.OrderLine", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("AccessoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AccessoryId");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderLines");
+                });
+
+            modelBuilder.Entity("FastFoodAppServer.Models.Non_Generated.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AccessoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AccessoryId");
+
+                    b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("FastFoodAppServer.Models.Non_Generated.Status", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Statustype")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("test");
+                    b.ToTable("Status");
                 });
 
             modelBuilder.Entity("FastFoodAppServer.Models.AspNetRoleClaims", b =>
@@ -282,6 +416,52 @@ namespace FastFoodAppServer.Migrations
                     b.HasOne("FastFoodAppServer.Models.AspNetUsers", "User")
                         .WithMany("AspNetUserTokens")
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("FastFoodAppServer.Models.Non_Generated.Customer", b =>
+                {
+                    b.HasOne("FastFoodAppServer.Models.AspNetUserLogins", "login")
+                        .WithMany()
+                        .HasForeignKey("LoginProvider", "loginProviderKey")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("FastFoodAppServer.Models.Non_Generated.Order", b =>
+                {
+                    b.HasOne("FastFoodAppServer.Models.Non_Generated.Status", "Status")
+                        .WithMany()
+                        .HasForeignKey("StatusId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("FastFoodAppServer.Models.Non_Generated.OrderLine", b =>
+                {
+                    b.HasOne("FastFoodAppServer.Models.Non_Generated.Accessory", "Accessory")
+                        .WithMany()
+                        .HasForeignKey("AccessoryId");
+
+                    b.HasOne("FastFoodAppServer.Models.Non_Generated.Order", null)
+                        .WithMany("OrderLines")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FastFoodAppServer.Models.Non_Generated.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("FastFoodAppServer.Models.Non_Generated.Product", b =>
+                {
+                    b.HasOne("FastFoodAppServer.Models.Non_Generated.Accessory", "Accessory")
+                        .WithMany()
+                        .HasForeignKey("AccessoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

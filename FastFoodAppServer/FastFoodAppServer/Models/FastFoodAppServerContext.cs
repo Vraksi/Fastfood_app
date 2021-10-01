@@ -1,4 +1,5 @@
 ﻿using System;
+using FastFoodAppServer.Models.Non_Generated;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -26,7 +27,12 @@ namespace FastFoodAppServer.Models
         public virtual DbSet<AspNetUserRoles> AspNetUserRoles { get; set; }
         public virtual DbSet<AspNetUserTokens> AspNetUserTokens { get; set; }
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
-        public virtual DbSet<TestTable> test { get; set; }
+        public  DbSet<Product> Products { get; set; }
+        public  DbSet<Status> Status { get; set; }
+        public  DbSet<Customer> Customers { get; set; }
+        public  DbSet<Order> Orders { get; set; }
+        public  DbSet<OrderLine> OrderLines { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -141,5 +147,7 @@ namespace FastFoodAppServer.Models
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+        public DbSet<FastFoodAppServer.Models.Non_Generated.Accessory> Accessory { get; set; }
     }
 }
