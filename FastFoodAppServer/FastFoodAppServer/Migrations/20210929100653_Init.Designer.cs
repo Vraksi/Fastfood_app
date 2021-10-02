@@ -23,7 +23,7 @@ namespace FastFoodAppServer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<int>("Id")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ConcurrencyStamp")

@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using FastFoodAppServer.Models;
 using FastFoodAppServer.Models.Non_Generated;
 
 namespace FastFoodAppServer.Models.Generated_Controller

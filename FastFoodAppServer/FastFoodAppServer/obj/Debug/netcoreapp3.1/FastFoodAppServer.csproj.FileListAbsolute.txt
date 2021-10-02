@@ -329,8 +329,3 @@ C:\Users\Vraksi\source\repos\Fastfood app\FastFoodAppServer\FastFoodAppServer\ob
 C:\Users\Vraksi\source\repos\Fastfood app\FastFoodAppServer\FastFoodAppServer\obj\Debug\netcoreapp3.1\FastFoodAppServer.dll
 C:\Users\Vraksi\source\repos\Fastfood app\FastFoodAppServer\FastFoodAppServer\obj\Debug\netcoreapp3.1\FastFoodAppServer.pdb
 C:\Users\Vraksi\source\repos\Fastfood app\FastFoodAppServer\FastFoodAppServer\obj\Debug\netcoreapp3.1\FastFoodAppServer.genruntimeconfig.cache
-C:\Users\Vraksi\source\repos\Fastfood app\FastFoodAppServer\FastFoodAppServer\obj\Debug\netcoreapp3.1\Razor\Views\Accessories\Create.cshtml.g.cs
-C:\Users\Vraksi\source\repos\Fastfood app\FastFoodAppServer\FastFoodAppServer\obj\Debug\netcoreapp3.1\Razor\Views\Accessories\Delete.cshtml.g.cs
-C:\Users\Vraksi\source\repos\Fastfood app\FastFoodAppServer\FastFoodAppServer\obj\Debug\netcoreapp3.1\Razor\Views\Accessories\Details.cshtml.g.cs
-C:\Users\Vraksi\source\repos\Fastfood app\FastFoodAppServer\FastFoodAppServer\obj\Debug\netcoreapp3.1\Razor\Views\Accessories\Edit.cshtml.g.cs
-C:\Users\Vraksi\source\repos\Fastfood app\FastFoodAppServer\FastFoodAppServer\obj\Debug\netcoreapp3.1\Razor\Views\Accessories\Index.cshtml.g.cs

@@ -4,14 +4,16 @@ using FastFoodAppServer.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FastFoodAppServer.Migrations
 {
     [DbContext(typeof(FastFoodAppServerContext))]
-    partial class FastFoodAppServerContextModelSnapshot : ModelSnapshot
+    [Migration("20211002103348_update_of_Accessory")]
+    partial class update_of_Accessory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

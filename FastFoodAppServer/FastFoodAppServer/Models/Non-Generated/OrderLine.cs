@@ -13,7 +13,7 @@ namespace FastFoodAppServer.Models.Non_Generated
         public int ProductId { get; set; }
         public double Price { get; set; }
         public Product Product { get; set; }
-        // TODO: tror ikke Accessory er nødvendig her men det kan den blive så jeg lader den stå til at blive fikset senere hvis jeg har ret
+        // TODO: tror ikke Accessory er nødvendig her men det kan den være at den bliver, så jeg lader den stå til at blive fikset senere hvis jeg har ret
         public Accessory Accessory { get; set; }
     }
 }

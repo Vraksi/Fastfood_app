@@ -11,6 +11,8 @@
     <Compile Remove="Migrations\20211001093831_Database_table_update.Designer.cs" />
     <Compile Remove="Migrations\20211001093951_Database_table_update.cs" />
     <Compile Remove="Migrations\20211001093951_Database_table_update.Designer.cs" />
+    <Compile Remove="Migrations\20211002103015_Removed_OrderlineId_From_Accessory.cs" />
+    <Compile Remove="Migrations\20211002103015_Removed_OrderlineId_From_Accessory.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

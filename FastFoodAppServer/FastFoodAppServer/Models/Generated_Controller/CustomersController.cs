@@ -25,6 +25,8 @@ namespace FastFoodAppServer.Models.Generated
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
         {
+            
+
             return await _context.Customers.ToListAsync();
         }
 
@@ -80,6 +82,14 @@ namespace FastFoodAppServer.Models.Generated
         [HttpPost]
         public async Task<ActionResult<Customer>> PostCustomer(Customer customer)
         {
+            // TODO: VIRKER KUN HVIS ASPNETUSER ID er EN EMAIL
+            var _customer = await _context.Customers.Where(s => s.LoginId == customer.LoginId).ToListAsync();
+            if(_customer.Count >= 1)
+            {
+                Response.StatusCode = 403;
+                return customer;
+            }
+
             _context.Customers.Add(customer);
             await _context.SaveChangesAsync();
 
