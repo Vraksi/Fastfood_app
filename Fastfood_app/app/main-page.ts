@@ -11,26 +11,18 @@ export function navigatingTo(args: EventData) {
 
 
 class ViewModel extends Observable{
-  private _Accessory: Accessory[]
-  private number: number
+  private _Accessory: ObservableArray<Accessory>
   constructor(){
     super()
-    
-    this.number = 0
+
     _AccessoryService = new AccessoryService
 
-    //this._Accessory = _AccessoryService.GetAccessories()
+     //_AccessoryService.GetAccessories()
   }
 
   onTap(){
     _AccessoryService.GetAccessories()
-    this._Accessory.forEach(element => {
-      this.number++
-      console.log(element.id)
-      console.log(element.name)
-      console.log(element.tag)
-    });
-    console.log("this is the amount of times its done " + this.number)
+   
   }
 }
 

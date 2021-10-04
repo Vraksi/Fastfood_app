@@ -27,6 +27,7 @@ namespace FastFoodAppServer
         {
             services.AddControllersWithViews();
             services.AddRazorPages();
+         
 
 
             var connection = Configuration.GetConnectionString("FastFoodAppServerContextConnection");
