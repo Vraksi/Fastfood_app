@@ -29,11 +29,12 @@ export class AccessoryService {
 
     GetAccessories(): Array<Accessory> {
         let o: any
-        Http.getString("https://10.0.2.2:5001/api/Accessories").then(
+        console.log("calls")
+      
+        
+        Http.getString("https://pokeapi.co/api/v2/pokemon?limit=100&offset=200").then(
             (result: any) => {
-                o = JSON.parse(result)
-                console.log("dwad"+o)
-                console.log("dwasdsd"+result)
+                console.log("dwasdsd " + result)
             },
             e => {
                 console.log("shits fucked");

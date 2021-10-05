@@ -2,6 +2,7 @@
 using FastFoodAppServer.Models.Non_Generated;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Logging;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -34,7 +35,7 @@ namespace FastFoodAppServer.Models
         public  DbSet<OrderLine> OrderLines { get; set; }
 
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
         {
 
             if (!optionsBuilder.IsConfigured)
@@ -42,9 +43,21 @@ namespace FastFoodAppServer.Models
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder
                     .EnableSensitiveDataLogging()
+                    .UseLoggerFactory(ConsoleLoggerFactory)
                     .UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=FastFoodAppServer;Trusted_Connection=True;");
             }
         }
+
+        // En console logger der fortæller hvad vores C# kode bliver lavet om til, Altså sql 
+        public static readonly ILoggerFactory ConsoleLoggerFactory
+            = LoggerFactory.Create(builder =>
+            {
+                //for at kunne bruge AddConsole skal ind i vores csproj og tilføje versionen vi gerne vil have fordi den ikke eksitere i den nuværende
+                builder.AddFilter((category, level) =>
+                category == DbLoggerCategory.Database.Command.Name
+                && level == LogLevel.Information)
+                .AddConsole();
+            });
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -329,3 +329,6 @@ C:\Users\Vraksi\source\repos\Fastfood app\FastFoodAppServer\FastFoodAppServer\ob
 C:\Users\Vraksi\source\repos\Fastfood app\FastFoodAppServer\FastFoodAppServer\obj\Debug\netcoreapp3.1\FastFoodAppServer.dll
 C:\Users\Vraksi\source\repos\Fastfood app\FastFoodAppServer\FastFoodAppServer\obj\Debug\netcoreapp3.1\FastFoodAppServer.pdb
 C:\Users\Vraksi\source\repos\Fastfood app\FastFoodAppServer\FastFoodAppServer\obj\Debug\netcoreapp3.1\FastFoodAppServer.genruntimeconfig.cache
+C:\Users\Vraksi\source\repos\Fastfood app\FastFoodAppServer\FastFoodAppServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Configuration.dll
+C:\Users\Vraksi\source\repos\Fastfood app\FastFoodAppServer\FastFoodAppServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Console.dll
+C:\Users\Vraksi\source\repos\Fastfood app\FastFoodAppServer\FastFoodAppServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll

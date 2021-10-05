@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "d+bhWL0Gf+fgRF5JpC5+YFxhJ4AiOj5fDPyZ9jqOP258fTm44KlDLMx/uVe4iAQoaeU9SMkU1oyXAHDq7Hiwsw==",
+  "dgSpecHash": "kPs28MW2TgLed9UjaIAlYmxRxeqboBf0fa5l7MfHYawjnBSRG7kUfWadtgc+kcAM88CNTq4NgDGAGOH5RYS8mA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Vraksi\\source\\repos\\Fastfood app\\FastFoodAppServer\\FastFoodAppServer\\FastFoodAppServer.csproj",
   "expectedPackageFiles": [
@@ -43,7 +43,10 @@
     "C:\\Users\\Vraksi\\.nuget\\packages\\microsoft.extensions.identity.stores\\3.1.18\\microsoft.extensions.identity.stores.3.1.18.nupkg.sha512",
     "C:\\Users\\Vraksi\\.nuget\\packages\\microsoft.extensions.logging\\3.1.19\\microsoft.extensions.logging.3.1.19.nupkg.sha512",
     "C:\\Users\\Vraksi\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.19\\microsoft.extensions.logging.abstractions.3.1.19.nupkg.sha512",
+    "C:\\Users\\Vraksi\\.nuget\\packages\\microsoft.extensions.logging.configuration\\3.1.18\\microsoft.extensions.logging.configuration.3.1.18.nupkg.sha512",
+    "C:\\Users\\Vraksi\\.nuget\\packages\\microsoft.extensions.logging.console\\3.1.18\\microsoft.extensions.logging.console.3.1.18.nupkg.sha512",
     "C:\\Users\\Vraksi\\.nuget\\packages\\microsoft.extensions.options\\3.1.19\\microsoft.extensions.options.3.1.19.nupkg.sha512",
+    "C:\\Users\\Vraksi\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\3.1.18\\microsoft.extensions.options.configurationextensions.3.1.18.nupkg.sha512",
     "C:\\Users\\Vraksi\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.19\\microsoft.extensions.primitives.3.1.19.nupkg.sha512",
     "C:\\Users\\Vraksi\\.nuget\\packages\\microsoft.identity.client\\3.0.8\\microsoft.identity.client.3.0.8.nupkg.sha512",
     "C:\\Users\\Vraksi\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\5.5.0\\microsoft.identitymodel.jsonwebtokens.5.5.0.nupkg.sha512",
