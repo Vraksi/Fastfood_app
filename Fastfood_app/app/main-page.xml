@@ -16,8 +16,10 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" navigatingTo="navigatingTo">
     <ActionBar title="Names List" icon=""></ActionBar>
     <StackLayout style="background-color:white">
-        <StackLayout orientation="horizontal">
-        
+        <StackLayout orientation="vertical">
+        <Button text="TAP" tap="{{ numbersetter }}" class="-primary" />
+        <Label text="{{ _number }}" class="h1 text-center"/>
+        <TextField text="http://192.168.8.122:5000/api/Accessories/4"/>
         <Label text="Tap the button" class="h1 text-center" />
         <Button text="TAP" tap="{{ onTap }}" class="-primary" />
         <Label text="{{ message }}" class="h2 text-center" textWrap="true" />

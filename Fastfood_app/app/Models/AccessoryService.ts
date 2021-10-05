@@ -1,12 +1,14 @@
 import { Http, HttpRequestOptions, HttpResponse, ObservableArray } from "@nativescript/core";
 import { Accessory } from "./Accessory"
-import { observable } from "rxjs"
+
 
 
 // Its a vue framework but there could be something of value for https requests 
 //https://blog.nativescript.org/make-http-requests-to-remote-web-services-in-a-nativescript-vue-app/index.html
+
 export class AccessoryService {
     private host: string
+    private observableArray = new ObservableArray(10)
     constructor() {
         //private http: HttpRequestOptions
         this.host = "192.168.8.122:5000/api/"
@@ -25,23 +27,9 @@ export class AccessoryService {
         { id: 10, name: "Skaszinke", tag: "tilbehør" }
     )
 
-    GetAccessories(): ObservableArray<Accessory> {
+    GetAccessories(): Array<Accessory> {
         let o: any
-        console.log("calls")
-        Http.request({
-            url: "http://10.0.2.2:5000/api/Accessories/4",
-            method: "GET",
-            headers: { "Content-Type": "application/json" }
-            
-          }).then(
-            (response: HttpResponse) => {
-              const result = response.content.toJSON();
-              console.log(`Http POST Result: ${result}`)
-            },
-            (e) => {}
-          );
-          /* 
-        Http.getString("http://10.0.2.2:5000/api/Accessories/4").then(
+        Http.getString("https://10.0.2.2:5001/api/Accessories").then(
             (result: any) => {
                 o = JSON.parse(result)
                 console.log("dwad"+o)
@@ -51,21 +39,41 @@ export class AccessoryService {
                 console.log("shits fucked");
                 console.dir(e)
             }
-        )*/
+        )
+        return o
 
-        return 
+        /* 
+console.log("dwadawd");
+      console.log("calls")
+      Http.request({
+          url: "http://10.0.2.2:5000/api/Accessories/4",
+          method: "GET",
+          headers: { "Content-Type": "application/json" }
+          
+        }).then(
+          (response: HttpResponse) => {
+            const result = response.content.toJSON();
+            console.log(`Http POST Result: ${result}`)
+          },
+          (e) => {}
+        );
+
+      */
+
+
     }
 
 
-    Getsmth(): Accessory[] {
+    Getsmth() {
+        return 12
+
         console.log("here")
         fetch(`http://10.0.2.2:5000/api/Accessories`).then(
             response => {
-            if(response.ok)
-            {
-                console.log(response.json)
-            }
-        })
+                if (response.ok) {
+                    console.log(response.json)
+                }
+            })
         return
     }
 }
