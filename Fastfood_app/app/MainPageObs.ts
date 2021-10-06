@@ -1,6 +1,6 @@
 import { Http, Observable, ObservableArray } from "@nativescript/core";
 import { Accessory } from "./Models/Accessory";
-import { AccessoryService } from "./Models/AccessoryService";
+import { AccessoryService } from "./Services/AccessoryService";
 
 
 export class ViewModel extends Observable {
@@ -18,6 +18,8 @@ export class ViewModel extends Observable {
       //console.log("Added "+ args.index); // Index of the changed item (in this case 7).
     });
     this.onTap()
+    this.GetAccessoryId(6)
+    
   }
 
   public get number(): number {
@@ -44,29 +46,19 @@ export class ViewModel extends Observable {
     this.number = 12
   }
 
-  public AccessorySetter() {
-
+  public GetAccessoryId(id: number) {
+    this._AccessoryService.GetAccessory(id).then((s => {
+      console.log(s)
+    }))
   }
 
   onTap() {
+    this._AccessoryService.PostAccessory("dwadaw", 1323, "food")
+    this._AccessoryService.DelAccessory(30)
+
     this._AccessoryService.GetAccessories().then((accessory => {
       //console.log(accessory)
       this.ArrayOfAccessories = accessory
     }))
-
-    /*
-    this._AccessoryService.Getsmth().then(s => {
-      console.log(s)
-    })
-
-    this.ArrayOfAccessories.forEach(element => {
-      //this._Accessory.push(this._AccessoryService.GetAccessories()) 
-      console.log(element.name)
-    });
-    //this._Accessory.push(this._AccessoryService.GetAccessories()) 
-*/
-
-
-
   }
 }
