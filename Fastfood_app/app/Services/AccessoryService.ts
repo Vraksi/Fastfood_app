@@ -13,28 +13,6 @@ export class AccessoryService {
         //private http: HttpRequestOptions
     }
 
-    private items = new Array<Accessory>(
-        { id: 1, name: "Skinke", priceOfItem: 123213, category: "tilbehør" },
-        { id: 2, name: "Pep", priceOfItem: 123213, category: "tilbehør" },
-        { id: 3, name: "Skidwadawnke", priceOfItem: 123213, category: "tilbehør" },
-        { id: 4, name: "Skinxzczxcke", priceOfItem: 123213, category: "tilbehør" },
-        { id: 5, name: "Skinsdke", priceOfItem: 123213, category: "tilbehør" },
-        { id: 6, name: "Skindske", priceOfItem: 123213, category: "tilbehør" },
-        { id: 7, name: "Skinsdke", priceOfItem: 123213, category: "tilbehør" },
-        { id: 8, name: "Sksdinke", priceOfItem: 123213, category: "tilbehør" },
-        { id: 9, name: "Sksdinke", priceOfItem: 123213, category: "tilbehør" },
-        { id: 10, name: "Skaszinke", priceOfItem: 123213, category: "tilbehør" }
-    )
-
-    public async Getsmth(): Promise<Accessory[]> {
-
-        const items = await new Promise<Accessory[]>((resolve, reject) => {
-            resolve(this.items)
-        })
-
-        return items.filter(i => i.id >= 2)
-    }
-
     public async GetAccessory(id: number): Promise<Accessory> {
         const accessory = await new Promise<Accessory>((resolve, reject) => {
             Http.getString(`${this.host}Accessories/${id}`).then(

@@ -11,7 +11,7 @@ namespace FastFoodAppServer.Models.Non_Generated
         public string Name { get; set; }
         public double Price { get; set; }
         public string Description { get; set; }
-        public int AccessoryId { get; set; }
-        public Accessory Accessory { get; set; }
+        // TODO: Skal laves om sådan den kan være null
+        public string AccessoriesAdded { get; set; }
     }
 }

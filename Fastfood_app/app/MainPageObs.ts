@@ -17,9 +17,10 @@ export class ViewModel extends Observable {
     this._Accessory.on(ObservableArray.changeEvent, (args: any) => {
       //console.log("Added "+ args.index); // Index of the changed item (in this case 7).
     });
-    this.onTap()
-    this.GetAccessoryId(6)
     
+
+    this.onTap()
+    this.GetAccessoryId(1)
   }
 
   public get number(): number {
@@ -53,8 +54,12 @@ export class ViewModel extends Observable {
   }
 
   onTap() {
-    this._AccessoryService.PostAccessory("dwadaw", 1323, "food")
-    this._AccessoryService.DelAccessory(30)
+    
+    
+    
+    
+    //this._AccessoryService.PostAccessory("dwadaw", 1323, "food")
+    //this._AccessoryService.DelAccessory(30)
 
     this._AccessoryService.GetAccessories().then((accessory => {
       //console.log(accessory)
