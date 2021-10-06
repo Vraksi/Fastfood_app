@@ -14,67 +14,69 @@ export class AccessoryService {
         this.host = "192.168.8.122:5000/api/"
     }
 
-    private accesories = new Array<Accessory>(
-        { id: 1, name: "Skinke", tag: "tilbehør" },
-        { id: 2, name: "Pep", tag: "tilbehør" },
-        { id: 3, name: "Skidwadawnke", tag: "tilbehør" },
-        { id: 4, name: "Skinxzczxcke", tag: "tilbehør" },
-        { id: 5, name: "Skinsdke", tag: "tilbehør" },
-        { id: 6, name: "Skindske", tag: "tilbehør" },
-        { id: 7, name: "Skinsdke", tag: "tilbehør" },
-        { id: 8, name: "Sksdinke", tag: "tilbehør" },
-        { id: 9, name: "Sksdinke", tag: "tilbehør" },
-        { id: 10, name: "Skaszinke", tag: "tilbehør" }
+    private items = new Array<Accessory>(
+        { id: 1, name: "Skinke", priceOfItem: 123213, category: "tilbehør" },
+        { id: 2, name: "Pep", priceOfItem: 123213, category: "tilbehør" },
+        { id: 3, name: "Skidwadawnke", priceOfItem: 123213, category: "tilbehør" },
+        { id: 4, name: "Skinxzczxcke", priceOfItem: 123213, category: "tilbehør" },
+        { id: 5, name: "Skinsdke", priceOfItem: 123213, category: "tilbehør" },
+        { id: 6, name: "Skindske", priceOfItem: 123213, category: "tilbehør" },
+        { id: 7, name: "Skinsdke", priceOfItem: 123213, category: "tilbehør" },
+        { id: 8, name: "Sksdinke", priceOfItem: 123213, category: "tilbehør" },
+        { id: 9, name: "Sksdinke", priceOfItem: 123213, category: "tilbehør" },
+        { id: 10, name: "Skaszinke", priceOfItem: 123213, category: "tilbehør" }
     )
 
-    GetAccessories(): Array<Accessory> {
-        let o: any
-        console.log("calls")
-      
-        
-        Http.getString("https://pokeapi.co/api/v2/pokemon?limit=100&offset=200").then(
-            (result: any) => {
-                console.log("dwasdsd " + result)
-            },
-            e => {
-                console.log("shits fucked");
-                console.dir(e)
-            }
-        )
-        return o
+    public async Getsmth(): Promise<Accessory[]> {
 
-        /* 
-console.log("dwadawd");
-      console.log("calls")
-      Http.request({
-          url: "http://10.0.2.2:5000/api/Accessories/4",
-          method: "GET",
-          headers: { "Content-Type": "application/json" }
-          
-        }).then(
-          (response: HttpResponse) => {
-            const result = response.content.toJSON();
-            console.log(`Http POST Result: ${result}`)
-          },
-          (e) => {}
-        );
+        const items = await new Promise<Accessory[]>((resolve, reject) => {
+            resolve(this.items)
+        })
 
-      */
-
-
+        return items.filter(i => i.id >= 2)
     }
 
+    public async GetAccessories(): Promise<Accessory[]> {
+        let o: Accessory[]
 
-    Getsmth() {
-        return 12
+        const accessory = await new Promise<Accessory[]>((resolve, reject) => {
+            Http.getString("http://10.0.2.2:5000/api/Accessories").then(
+                (result: any) => {
+                    //console.log("Got Data")
 
-        console.log("here")
-        fetch(`http://10.0.2.2:5000/api/Accessories`).then(
-            response => {
-                if (response.ok) {
-                    console.log(response.json)
+                    resolve(JSON.parse(result))
+                },
+                e => {
+                    console.log("shits fucked");
+                    console.dir(e)
                 }
-            })
-        return
+            )
+        })
+
+        return accessory
+
+
+        /*
+        console.log("dwadawd");
+              console.log("calls")
+              Http.request({
+                  url: "http://10.0.2.2:5000/api/Accessories/4",
+                  method: "GET",
+                  headers: { "Content-Type": "application/json" }
+                  
+                }).then(
+                  (response: HttpResponse) => {
+                    const result = response.content.toJSON();
+                    console.log(`Http POST Result: ${result}`)
+                  },
+                  (e) => {}
+                );
+        
+              */
+
+
     }
+
+
+
 }

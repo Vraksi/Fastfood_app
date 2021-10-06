@@ -6,6 +6,8 @@ purpose of the file is to pass control to the app’s first module.
 
 import { Application } from '@nativescript/core'
 
+//import './tslib.nativescript'
+
 Application.run({ moduleName: 'app-root' })
 
 /*

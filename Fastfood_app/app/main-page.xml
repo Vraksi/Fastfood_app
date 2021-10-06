@@ -23,12 +23,12 @@
         <Label text="Tap the button" class="h1 text-center" />
         <Button text="TAP" tap="{{ onTap }}" class="-primary" />
         <Label text="{{ message }}" class="h2 text-center" textWrap="true" />
-            <Repeater items="{{ _Accessory }}">
+            <Repeater items="{{ _ArrayOfAccessories }}">
                 <Repeater.itemTemplate>
                     <StackLayout orientation="horizontal">
-                        <Label text="{{ name }}" style="width:33%" />
-                        <Label text=" {{ tag }}" style="width:33%" />
-                        <Label text="{{ id }}" style="width:33%" />
+                        <Label text="{{ name }}" style="width:25%" />
+                        <label text="{{ priceOfItem }}" style="width:25%"/>
+                        <Label text=" {{ category }}" style="width:25%" />
                     </StackLayout>
                 </Repeater.itemTemplate>
             </Repeater>

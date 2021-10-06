@@ -10,7 +10,7 @@ export function navigatingTo(args: EventData) {
   page.bindingContext = obs
 
   obs.on(Observable.propertyChangeEvent, (event: PropertyChangeData) => {
-    
+
     console.log(event.propertyName);
     console.log(event.value);
   })

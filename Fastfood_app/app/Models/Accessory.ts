@@ -1,12 +1,15 @@
-export class Accessory{
+export class Accessory {
 
     public id: number;
     public name: string;
-    public tag: string;
+    public priceOfItem: number;
+    public category: string;
 
-    constructor(id, name, tag){
+    /* MAYBE NEEDED dont know yets
+    constructor(id, name, category){
         this.id = id
         this.name = name
-        this.tag = tag
+        this.category = category
     }
+    */
 }
