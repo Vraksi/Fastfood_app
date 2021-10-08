@@ -1,5 +1,3 @@
-
-
 <!--
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
 
@@ -13,23 +11,47 @@
 </Page>
 -->
 
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" navigatingTo="navigatingTo">
-    <ActionBar title="Names List" icon=""></ActionBar>
-    <StackLayout style="background-color:white">
-        <StackLayout orientation="horizontal">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" navigatingTo="navigatingTo" class="{{ dialogShown ? 'page dialogOpen' : 'page' }}">
+
+    <Page.actionBar>
+        <ActionBar icon="" class="action-bar">
+            <Label text="Pizzaplace tm" class="action-bar"/>
+        </ActionBar>
+    </Page.actionBar>
+
+
+    <GridLayout>
         
-        <Label text="Tap the button" class="h1 text-center" />
-        <Button text="TAP" tap="{{ onTap }}" class="-primary" />
-        <Label text="{{ message }}" class="h2 text-center" textWrap="true" />
-            <Repeater items="{{ _Accessory }}">
-                <Repeater.itemTemplate>
-                    <StackLayout orientation="horizontal">
-                        <Label text="{{ name }}" style="width:33%" />
-                        <Label text=" {{ tag }}" style="width:33%" />
-                        <Label text="{{ id }}" style="width:33%" />
-                    </StackLayout>
-                </Repeater.itemTemplate>
-            </Repeater>
+        <StackLayout class="content p-20" style="background-color:white">
+        <Label text="PIZZA" class="h1" style="background-color: rgb(164, 164, 165);"></Label>
+            <ListView items="{{ myTitles }}" itemTap="showDialog" separatorColor="orangered" class="list-group" id="MenuItems" row="2" height= "100%">
+                <ListView.itemTemplate>
+                    <!-- The item template can only have a single root view container (e.g. GriLayout, StackLayout, etc.) -->
+                    <GridLayout rows="auto, auto" columns="*" class="list-group-item">
+                        <Label row="0" col="0" text="{{ title }}" class="h2" />
+                        <Label row="1" col="0" text="{{ desc }}" class="h4" />
+                    </GridLayout>
+                </ListView.itemTemplate>
+            </ListView>
+
         </StackLayout>
-    </StackLayout>
+
+        <AbsoluteLayout class="dialog-wrapper">
+            <StackLayout>
+                <Label text="{{ myTitles.title.getItem({{ index }}) }}" class="h2"></Label>
+                <Button class="btnCancel" text="Cancel" tap="closeDialog"></Button>
+            </StackLayout>
+            <ListView text="Options" items="{{ myOptions }}" separatorColor="orangered" class="dialog" id="Options" row="1" height= "100%">
+                <ListView.itemTemplate>
+                    <GridLayout rows="auto" columns="*,*" class="dialog">
+                        <Label row="0" col="0" text="{{ title }}"></Label>
+                        <Switch row="0" col="1" checked="false" loaded="onSwitchLoaded"/>
+                    </GridLayout>
+                </ListView.itemTemplate>
+            </ListView>
+
+
+        </AbsoluteLayout>
+
+    </GridLayout>
 </Page>
