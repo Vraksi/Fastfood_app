@@ -19,7 +19,6 @@
         <StackLayout orientation="vertical">
         <Button text="TAP" tap="{{ numbersetter }}" class="-primary" />
         <Label text="{{ _number }}" class="h1 text-center"/>
-        <TextField text="http://192.168.8.122:5000/api/Accessories/4"/>
         <Label text="Tap the button" class="h1 text-center" />
         <Button text="TAP" tap="{{ onTap }}" class="-primary" />
         <Label text="{{ message }}" class="h2 text-center" textWrap="true" />

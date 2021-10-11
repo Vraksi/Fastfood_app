@@ -21,6 +21,7 @@ namespace FastFoodAppServer.Models
         {
         }
 
+        //for at C# ved hvordan vores modeller ser ud
         public virtual DbSet<AspNetRoleClaims> AspNetRoleClaims { get; set; }
         public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
@@ -43,21 +44,10 @@ namespace FastFoodAppServer.Models
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder
                     .EnableSensitiveDataLogging()
-                    .UseLoggerFactory(ConsoleLoggerFactory)
                     .UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=FastFoodAppServer;Trusted_Connection=True;");
             }
         }
 
-        // En console logger der fortæller hvad vores C# kode bliver lavet om til, Altså sql 
-        public static readonly ILoggerFactory ConsoleLoggerFactory
-            = LoggerFactory.Create(builder =>
-            {
-                //for at kunne bruge AddConsole skal ind i vores csproj og tilføje versionen vi gerne vil have fordi den ikke eksitere i den nuværende
-                builder.AddFilter((category, level) =>
-                category == DbLoggerCategory.Database.Command.Name
-                && level == LogLevel.Information)
-                .AddConsole();
-            });
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

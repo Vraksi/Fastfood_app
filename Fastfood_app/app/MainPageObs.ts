@@ -4,7 +4,6 @@ import { AccessoryService } from "./Services/AccessoryService";
 
 
 export class ViewModel extends Observable {
-  private _Accessory: ObservableArray<Accessory>;
   private _ArrayOfAccessories: Accessory[]
   private _number: number;
   private _AccessoryService: AccessoryService;
@@ -12,23 +11,22 @@ export class ViewModel extends Observable {
   constructor() {
     super()
     this._AccessoryService = new AccessoryService
-    this.number = 0
-    this._Accessory = new ObservableArray()
-    this._Accessory.on(ObservableArray.changeEvent, (args: any) => {
-      //console.log("Added "+ args.index); // Index of the changed item (in this case 7).
-    });
-    
 
+    //vi kalder vores funktioner i vores constructor sådan at det data der skal vises bliver hentet med det samme
     this.onTap()
     this.GetAccessoryId(1)
   }
 
+  //#region Getters and setters
+
+  //Der bliver lavet en notifyPropertyChange, hvor den første parameter er til den variable der skal ændres og den anden parameter er for skrive værdien ud.
   public get number(): number {
     return this._number;
   }
 
   public set number(v: number) {
     this._number = v;
+    //
     this.notifyPropertyChange("_number", v)
   }
 
@@ -41,28 +39,19 @@ export class ViewModel extends Observable {
     this._ArrayOfAccessories = v;
     this.notifyPropertyChange("_ArrayOfAccessories", v)
   }
+  //#endregion
 
 
-  public numbersetter() {
-    this.number = 12
-  }
-
+  //en funktion for at få accessory med id og konsol logger det når vi får respons fra det. Denne get er fra et promise sådan at vi gør noget når vi får respons
   public GetAccessoryId(id: number) {
     this._AccessoryService.GetAccessory(id).then((s => {
       console.log(s)
     }))
   }
 
+  //en funktion for at få accessory og lægger den nye data over i vores array af objekter. Denne get er fra et promise sådan at vi gør noget når vi får respons
   onTap() {
-    
-    
-    
-    
-    //this._AccessoryService.PostAccessory("dwadaw", 1323, "food")
-    //this._AccessoryService.DelAccessory(30)
-
     this._AccessoryService.GetAccessories().then((accessory => {
-      //console.log(accessory)
       this.ArrayOfAccessories = accessory
     }))
   }

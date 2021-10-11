@@ -1,3 +1,5 @@
+/* For at indsætte dummy data i serveren*/
+
 USE FastFoodAppServer
 
 INSERT INTO [Status] VALUES ('Bestilt')
@@ -15,7 +17,7 @@ INSERT INTO Accessory ([Name], Category, PriceOfItem) VALUES ('Skinke','burger',
 INSERT INTO Products VALUES ( 'Burger', 95, 'A burger', '1,2,3,4')
 INSERT INTO Products VALUES ( 'Big Burger', 95, 'A burger', '1,2,3,4')
 INSERT INTO Products VALUES ( 'Hello', 95, 'A burger', '1,2,3,4')
-INSERT INTO Products VALUES ( 'BADasd', 95, 'A burger', '1,2,3,4')
+INSERT INTO Products VALUES ( 'Pizza', 95, 'A burger', '1,2,3,4')
 INSERT INTO Products VALUES ( 'dwazxc', 95, 'A burger', '1,2,3,4')
 INSERT INTO Products VALUES ( 'zxczxc', 95, 'A burger', '1,2,3,4')
 INSERT INTO Products VALUES ( 'awdaw', 95, 'A burger', '1,2,3,4')
@@ -53,10 +55,3 @@ INSERT INTO OrderLines VALUES (1, 3, 2, 501, '1,2,3,3')
 INSERT INTO OrderLines VALUES (2, 1, 2, 502, '1,2,3,3')
 INSERT INTO OrderLines VALUES (2, 2, 2, 530, '1,2,3,3')
 INSERT INTO OrderLines VALUES (3, 3, 2, 501, '1,2,3,3')
-
-
-
-
-
-
-

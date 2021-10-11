@@ -25,6 +25,7 @@ namespace FastFoodAppServer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //skal tilføjes for at ASPNET roles og users fungere
             services.AddControllersWithViews();
             services.AddRazorPages();
          
