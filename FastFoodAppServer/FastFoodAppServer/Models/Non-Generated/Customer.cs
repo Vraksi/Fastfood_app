@@ -10,6 +10,8 @@ namespace FastFoodAppServer.Models.Non_Generated
         public int Id { get; set; }
         public string Address { get; set; }
         public string LoginId { get; set; }
+        public string OrderId { get; set; }
+        public Order Orders { get; set; }
         public AspNetUsers User { get; set; }
         public Customer()
         {
