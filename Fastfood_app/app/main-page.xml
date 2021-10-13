@@ -11,12 +11,12 @@
         
         <StackLayout class="content p-20" style="background-color:white">
         <Label text="PIZZA" class="h1" style="background-color: rgb(164, 164, 165);"></Label>
-            <ListView items="{{ myTitles }}" itemTap="showDialog" separatorColor="orangered" class="list-group" id="MenuItems" row="2" height= "100%">
+            <ListView items="{{ _ArrayOfAccessories }}" itemTap="showDialog" separatorColor="orangered" class="list-group" id="MenuItems" row="2" height= "100%">
                 <ListView.itemTemplate>
                     <!-- The item template can only have a single root view container (e.g. GriLayout, StackLayout, etc.) -->
                     <GridLayout rows="auto, auto" columns="*" class="list-group-item">
-                        <Label row="0" col="0" text="{{ title }}" class="h2" />
-                        <Label row="1" col="0" text="{{ desc }}" class="h4" />
+                        <Label row="0" col="0" text="{{ name }}" class="h2" />
+                        <Label row="1" col="0" text="{{ priceOfItem }}" class="h4" />
                     </GridLayout>
                 </ListView.itemTemplate>
             </ListView>
